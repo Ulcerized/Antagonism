@@ -1,0 +1,71 @@
+html {
+    background-image: url(../images/Noise.svg);
+    background-color: var(--color-1);
+}
+
+.container.menuhp {
+    display: grid;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    a {
+        grid-area: 1/ 1;
+        place-self: center;
+        --ca: calc(var(--i) * 1turn / var(--m));
+        transform:
+            translateX(calc(calc(16rem * cos(var(--ca)) * cos(-20deg)) - calc(12rem * sin(var(--ca)) * sin(-20deg))))  // x = a * cos(t) * cos(d) - b * sin(t) * sin(d)
+            translateY(calc(calc(16rem * cos(var(--ca)) * sin(-20deg)) + calc(12rem * sin(var(--ca)) * cos(-20deg)))); // y = a * cos(t) * sin(d) + b * sin(t) * cos(d)
+        }
+
+    img {
+        height: 5rem;
+        position: absolute;
+        transform: translate(-50%,-50%);
+    }
+}
+
+.logo215 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 12rem;
+    animation: 10s linear infinite ominous_glow;
+}
+
+
+@keyframes ominous_glow {
+    50% {
+        filter: drop-shadow(0 0 0.75rem var(--color-2));
+    }
+}
+
+@keyframes get_rotated_idiot {
+    100% {
+        rotate: 1turn;
+    }
+}
+
+.CircleName {
+    height: 170px;
+    width: 170px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+
+    path {
+        stroke: var(--color-4);
+        opacity: 0;
+    }
+
+    text {
+        font-family: VHS Gothic;
+        font-size: 1rem;
+        fill: var(--color-4);
+    }
+
+    :hover {
+        animation: 0.25s get_rotated_idiot;
+    }
+}

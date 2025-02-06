@@ -1,0 +1,110 @@
+.page.contact {
+    form {
+        background-image: linear-gradient(#393AB0, #020069);
+        box-shadow: 0 0 1px 1px #757575,
+            0 0 1px 3px #eeeeee,
+            0 0 0px 5px #757575;
+        border-radius: 1rem;
+        display: grid;
+        padding: 1rem 20%;
+        gap: 1rem;
+        grid-template-areas:
+            "title title"
+            "class name"
+            "mail object"
+            "message message"
+            "send send";
+        color: #00aaff;
+        font-size: 0.75rem;
+        font-family: Nova Flat;
+
+        >div {
+            display: flex;
+            flex-direction: column;
+
+            input,
+            select {
+                height: 35px;
+            }
+
+            select {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+            }
+
+            input,
+            select,
+            textarea {
+                box-sizing: border-box;
+                padding: 0.25rem 0.75rem;
+                background-color: #11111180;
+                border: 1px solid #eeeeee80;
+                color: #eeeeee;
+                font-family: Nova Flat;
+
+                &:focus {
+                    background-color: #111111;
+                    outline: none;
+                }
+            }
+
+            select, option {
+                font-family: Nova Flat;
+            }
+        }
+
+        .title {
+            grid-area: title;
+            font-family: VHS Gothic;
+            color: #eeeeee;
+            text-align: center;
+        }
+
+        .input-1 {
+            grid-area: class;
+            display: flex;
+            justify-content: center;
+
+            img {
+                image-rendering: pixelated;
+                height: 4rem;
+                position: absolute;
+                transform: translateX(-125%);
+            }
+        }
+
+        .input-2 {
+            grid-area: name;
+        }
+
+        .input-3 {
+            grid-area: mail;
+        }
+
+        .input-4 {
+            grid-area: object;
+        }
+
+        .input-5 {
+            grid-area: message;
+
+            textarea {
+                resize: none;
+                height: 157px;
+            }
+        }
+
+        .input-6 {
+            justify-self: center;
+            grid-area: send;
+            background-color: #111111;
+            border: 1px solid #eeeeee80;
+            height: 2rem;
+            font-family: Nova Flat;
+            color: #eeeeee;
+            padding: 0 3rem;
+            cursor: pointer;
+        }
+    }
+}

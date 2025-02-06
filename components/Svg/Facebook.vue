@@ -1,0 +1,7 @@
+<template>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 32 32" shape-rendering="crispEdges">
+        <metadata>Made with Pixels to Svg https://codepen.io/shshaw/pen/XbxvNj</metadata>
+        <path stroke="#000000"
+            d="M12 0h8M9 1h14M7 2h18M6 3h20M5 4h22M4 5h24M3 6h15M24 6h5M2 7h15M24 7h6M2 8h14M24 8h6M1 9h14M24 9h7M1 10h14M21 10h10M1 11h13M20 11h11M0 12h14M19 12h13M0 13h14M19 13h13M0 14h14M19 14h13M0 15h14M19 15h13M0 16h10M23 16h9M0 17h10M23 17h9M0 18h10M23 18h9M0 19h10M23 19h9M1 20h13M19 20h12M1 21h13M19 21h12M1 22h13M19 22h12M2 23h12M19 23h11M2 24h12M19 24h11M3 25h11M19 25h10M4 26h10M19 26h9M5 27h9M19 27h8M6 28h8M19 28h7M7 29h7M19 29h6M9 30h5M19 30h4M12 31h2M19 31h1" />
+    </svg>
+</template>

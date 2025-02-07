@@ -1,0 +1,59 @@
+.tour {
+    .select {
+        display: flex;
+        justify-content: center;
+        font-family: VHS Gothic;
+        gap: 2rem;
+        font-size: 2rem;
+        color: #808080;
+
+        .active {
+            color: var(--color-3);
+
+            &::before {
+                content: '>';
+            }
+
+        }
+    }
+}
+
+
+.datesList {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    background-color: var(--color-1-trans);
+    border: 2px solid var(--color-2);
+    border-radius: 6px;
+    text-decoration: none;
+    padding: 1rem;
+    margin: 0.5rem;
+    align-items: start;
+
+    .details {
+        display: flex;
+        flex-direction: column;
+        color: var(--color-4);
+        padding-left: 2rem;
+
+        .date {
+            font-family: VHS Gothic;
+            font-size: 1.5rem;
+        }
+
+        .venue, .lineup {
+            font-family: Nova Flat;
+        }
+
+        .venue {
+            font-size: 1.5rem;
+            padding: 1rem 1rem;
+        }
+
+        .lineup {
+            font-size: 1rem;
+        }
+
+    }
+}

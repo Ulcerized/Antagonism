@@ -2,13 +2,21 @@
     .select {
         display: flex;
         justify-content: center;
-        font-family: VHS Gothic;
         gap: 2rem;
-        font-size: 2rem;
-        color: #808080;
+
+        button {
+            font-family: VHS Gothic;
+            font-size: 2rem;
+            color: #808080;
+            background: none;border: none;
+            
+            &:hover {
+                cursor: pointer;
+            }
+        }
 
         .active {
-            color: var(--color-3);
+            color: var(--color-2);
 
             &::before {
                 content: '>';
@@ -30,6 +38,7 @@
     padding: 1rem;
     margin: 0.5rem;
     align-items: start;
+    gap: 1rem;
 
     .details {
         display: flex;

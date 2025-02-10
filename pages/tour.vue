@@ -2,65 +2,81 @@
   <div class="page tour">
     <h1>CATCH US ON TOUR !</h1>
     <div class="select">
-      <p v-on:click="chargeDates('future')" class="active">Future</p>
-      <p v-on:click="chargeDates('past')">Past</p>
+      <button v-for="tomselec in selectable" :key="tomselec" v-on:click="chargeDates(tomselec)"
+        :class="{ active: selected === tomselec }">
+        {{ tomselec }}
+      </button>
     </div>
-    <component :is="jonhatan" />
+    <div>
+      <a v-for="date in tourDates.slice().reverse()" :key="date.id" :href="date.url" target="_blank" class="datesList">
+        <div class="details">
+          <p class="date">{{ formatDate(date.datetime) }}</p>
+          <p class="venue">{{ date.venue.name }}<br>
+            {{ date.venue.city }}, {{ date.venue.country }}</p>
+          <p class="lineup"> {{ formatLineUp(date.lineup) }}</p>
+        </div>
+      </a>
+    </div>
   </div>
 </template>
 
 
-<script setup>
+<script lang="ts" setup>
+const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'] as const
+var selected = ref('Future')
+const selectable = ['Future', 'Past']
+
+
+
+const { data: zbeb } = await useFetch('https://rest.bandsintown.com/artists/Antagonism/events?app_id=79ded5ff4c09a57614ecc43f90746887&date=past', { method: 'GET' });
+const { data: zboub } = await useFetch('https://rest.bandsintown.com/artists/Antagonism/events?app_id=79ded5ff4c09a57614ecc43f90746887', { method: 'GET' });
+
+const pastDates = computed(() => {
+  return zbeb && zbeb.value || []
+})
+const futureDates = computed(() => {
+  return zboub && zboub.value || []
+})
+var tourDates = futureDates
+
 useHead({
   title: "Tour | Antagonism",
 })
+onMounted(() => {
+  // cette fonction est lancée quand le composant est prêt
+})
 
-console.log('blaboum')
-
-const { data } = await useFetch('https://rest.bandsintown.com/artists/Antagonism/events?app_id=79ded5ff4c09a57614ecc43f90746887&date=past', { method: 'GET' });
-
-let info = data.value
-let past = Array()
-let months = Array('JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC')
-for (let i = 0; i < info.length; i++) {
-  let url = info[i]['url']
-  let datetime = new Date(info[i]['datetime'])
-  let date = months[datetime.getMonth()] + '. ' + datetime.getDate() + ' ' + datetime.getFullYear()
-  let venuename = info[i]['venue']['name']
-  let venuecity = info[i]['venue']['city']
-  let venuecountry = info[i]['venue']['country']
-  let lineup = info[i]['lineup'].filter(checkAntagonism)
-  let lineupYesNo = ''
-  if (lineup.length > 0) {
-    let printedlineup = 'With : '
-    lineup.forEach(band => {
-      printedlineup = printedlineup + band + ', '
-    });
-    printedlineup = printedlineup.slice(0, -2)
-    lineupYesNo = h('p', { class: 'lineup' }, [printedlineup])
+const chargeDates = (period: string) => {
+  if (period === 'Future') {
+    selected.value = 'Future'
+    tourDates = futureDates
   }
-
-  let j = h('div',
-    [h('a', { href: url, class: 'datesList' },
-      [h('div', { class: 'details' }, [
-        h('p', { class: 'date' }, [date]),
-        h('p', { class: 'venue' }, [venuename, h('br'), venuecity, ', ', venuecountry]),
-        lineupYesNo
-      ]),
-      h('div', { class: 'buttons' }, [
-
-      ])
-      ])
-    ])
-  past.unshift(j)
+  else if (period === 'Past') {
+    selected.value = 'Past'
+    tourDates = pastDates
+  }
 }
 
+const formatDate = (date: string) => {
+  const dateInput = new Date(date)
+  return months[dateInput.getMonth()] + '. ' + dateInput.getDate() + ' ' + dateInput.getFullYear()
+}
 
-
-let jonhatan = h('div', [past])
-
-
+const formatLineUp = (lineup: Array<string>) => {
+  if (lineup.length > 1) {
+    let liste = 'With : '
+    lineup.forEach(band => {
+      if (band !== "Antagonism") {
+        liste = liste + band + ', '
+      }
+    })
+    liste = liste.slice(0, -2)
+    if (liste.length > 50) {
+      liste = liste.slice(0, 50) + '...'
+    }
+    return liste
+  }
+  return ''
+}
 
 </script>
-
-<style></style>

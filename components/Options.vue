@@ -1,48 +1,37 @@
 <template>
     <div>
-        <div class="options opener" v-on:click="OpenOptions">
+        <div class="options opener" v-on:click="openOptions">
             <p>OPTIONS</p>
         </div>
-        <div class="options menu" :style="{'display': OptionsMenu}">
-            <div class="cross" v-on:click="CloseOptions">
+        <div class="overlay" :style="{ 'display': optionsMenu }"></div>
+        <div class="options menu" :style="{ 'display': optionsMenu }">
+            <div class="cross" v-on:click="closeOptions">
                 <p>X</p>
             </div>
             <div class="encadre">
                 <p>OPTIONS</p>
             </div>
             <div class="choices">
-                <div class="grid-item m-1 on">
-                    <p>ENGLISH</p>
-                </div>
-                <div class="grid-item m-2 on">
-                    <p>LANGUE</p>
+                <div class="choice" :class="{ on: language === 'french' }">
+                    <button v-on:click="toggleLanguage('english')">{{ lang[0] }}</button>
+                    <p>{{ lang[1] }}</p>
                     <div class="bar"></div>
+                    <button v-on:click="toggleLanguage('french')">{{ lang[2] }}</button>
                 </div>
-                <div class="grid-item m-3 on">
-                    <p>FRANÇAIS</p>
-                </div>
-                <div class="grid-item m-4 off">
-                    <p>OFF</p>
-                </div>
-                <div class="grid-item m-5 off">
-                    <p>CAUCHEMAR</p>
+                <div class="choice" :class="{ on: nightmare }">
+                    <button v-on:click="toggleNightmare(false)">{{ night[0] }}</button>
+                    <p>{{ night[1] }}</p>
                     <div class="bar"></div>
+                    <button v-on:click="toggleNightmare(true)">{{ night[2] }}</button>
                 </div>
-                <div class="grid-item m-6 off">
-                    <p>ON</p>
-                </div>
-                <div class="grid-item m-7 off">
-                    <p>POINTEUR</p>
-                </div>
-                <div class="grid-item m-8 off">
-                    <p>CURSEUR</p>
+                <div class="choice" :class="{ on: shotgun }">
+                    <button v-on:click="toggleShotgun(false)">{{ point[0] }}</button>
+                    <p>{{ point[1] }}</p>
                     <div class="bar"></div>
-                </div>
-                <div class="grid-item m-9 off">
-                    <p>FUSIL</p>
+                    <button v-on:click="toggleShotgun(true)">{{ point[2] }}</button>
                 </div>
             </div>
-            <div class="exit" v-on:click="CloseOptions">
+            <div class="exit" v-on:click="closeOptions">
                 <p>EXIT</p>
             </div>
             <div>
@@ -55,17 +44,49 @@
     </div>
 </template>
 
-<script setup>
-let OptionsMenu = 'none'
+<script lang="ts" setup>
+const optionsMenu = ref('none')
 
-function OpenOptions() {
-    console.log('pass')
-    OptionsMenu = 'flex'
+const openOptions = () => {
+    optionsMenu.value = 'flex'
 }
 
-function CloseOptions() {
-    OptionsMenu = 'none'
+const closeOptions = () => {
+    optionsMenu.value = 'none'
 }
 
+const lang = ['ENGLISH', 'LANGUAGE', 'FRANÇAIS'] as const
+const night = ['OFF', 'NIGHTMARE', 'ON'] as const
+const point = ['POINTER', 'CURSOR', 'SHOTGUN'] as const
+
+
+
+
+
+var nightmare = ref(true)
+var language = ref('english')
+var shotgun = ref(false)
+
+
+
+const toggleLanguage = (input: string) => {
+
+}
+
+
+const toggleNightmare = (input: boolean) => {
+  if (!input) {
+    nightmare.value = false
+    document.documentElement.setAttribute('data-theme', 'dark')
+  }
+  else {
+    nightmare.value = true
+    document.documentElement.setAttribute('data-theme', 'nightmare')
+  }
+}
+
+const toggleShotgun = (input: boolean) => {
+
+}
 
 </script>

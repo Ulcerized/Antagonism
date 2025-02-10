@@ -1,10 +1,10 @@
 <template>
     <div>
-        <div class="options opener">
+        <div class="options opener" v-on:click="OpenOptions">
             <p>OPTIONS</p>
         </div>
-        <div class="options menu">
-            <div class="cross">
+        <div class="options menu" :style="{'display': OptionsMenu}">
+            <div class="cross" v-on:click="CloseOptions">
                 <p>X</p>
             </div>
             <div class="encadre">
@@ -42,7 +42,7 @@
                     <p>FUSIL</p>
                 </div>
             </div>
-            <div class="exit">
+            <div class="exit" v-on:click="CloseOptions">
                 <p>EXIT</p>
             </div>
             <div>
@@ -55,6 +55,17 @@
     </div>
 </template>
 
-<script>
+<script setup>
+let OptionsMenu = 'none'
+
+function OpenOptions() {
+    console.log('pass')
+    OptionsMenu = 'flex'
+}
+
+function CloseOptions() {
+    OptionsMenu = 'none'
+}
+
 
 </script>

@@ -37,7 +37,6 @@
     text-decoration: none;
     padding: 1rem;
     margin: 0.5rem;
-    align-items: start;
     gap: 1rem;
 
     .details {
@@ -64,5 +63,13 @@
             font-size: 1rem;
         }
 
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-end;
+        margin-right: 2rem;
     }
 }

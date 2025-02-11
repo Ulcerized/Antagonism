@@ -8,6 +8,7 @@
     top: 1rem;
     right: 1.5rem;
     cursor: pointer;
+    z-index: 9;
 
     p {
         color: var(--color-1);
@@ -143,6 +144,7 @@
 
 .overlay {
     content: '';
+    z-index: 8;
     position: absolute;
     top: 0;
     left: 0;

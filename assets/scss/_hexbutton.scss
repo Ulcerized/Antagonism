@@ -1,0 +1,35 @@
+.hexbutton {
+    text-align: center;
+    text-decoration: none;
+
+    p {
+        font-family: VHS Gothic;
+        color: var(--color-2);
+        align-self: center;
+        font-size: 1.25rem;
+    }
+
+    &--tour {
+        position: relative;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        aspect-ratio: 20/3;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: var(--color-2);
+            clip-path: polygon(100% 50%, 94% 100%, 6% 100%, 0% 50%, 6% 0%, 94% 0%, 100% 50%,
+                    calc(94% - 3px) calc(0% - -5.2px),
+                    calc(6% - -3px) calc(0% - -5.2px),
+                    calc(0% - -7px) calc(50% - 0px),
+                    calc(6% - -3px) calc(100% - 5.2px),
+                    calc(94% - 3px) calc(100% - 5.2px),
+                    calc(100% - 7px) calc(50% - 0px),
+                    calc(94% - 3px) calc(0% - -5.2px));
+
+        }
+    }
+}

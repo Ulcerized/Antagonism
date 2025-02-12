@@ -14,19 +14,19 @@
             <div class="choices">
                 <div class="choice" :class="{ on: language === 'french' }">
                     <button v-on:click="toggleLanguage('english')">{{ lang[0] }}</button>
-                    <p>{{ lang[1] }}</p>
+                    <p class="hexbutton hexbutton--outline--full">{{ lang[1] }}</p>
                     <div class="bar"></div>
                     <button v-on:click="toggleLanguage('french')">{{ lang[2] }}</button>
                 </div>
                 <div class="choice" :class="{ on: nightmare }">
                     <button v-on:click="toggleNightmare(false)">{{ night[0] }}</button>
-                    <p>{{ night[1] }}</p>
+                    <p class="hexbutton hexbutton--outline--full">{{ night[1] }}</p>
                     <div class="bar"></div>
                     <button v-on:click="toggleNightmare(true)">{{ night[2] }}</button>
                 </div>
                 <div class="choice" :class="{ on: shotgun }">
                     <button v-on:click="toggleShotgun(false)">{{ point[0] }}</button>
-                    <p>{{ point[1] }}</p>
+                    <p class="hexbutton hexbutton--outline--full">{{ point[1] }}</p>
                     <div class="bar"></div>
                     <button v-on:click="toggleShotgun(true)">{{ point[2] }}</button>
                 </div>

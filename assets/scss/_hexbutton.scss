@@ -1,35 +1,94 @@
 .hexbutton {
     text-align: center;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    aspect-ratio: 20/3;
+    position: relative;
 
     p {
         font-family: VHS Gothic;
-        color: var(--color-2);
-        align-self: center;
         font-size: 1.25rem;
     }
+    svg {
+        height: 1.25rem;
+    }
+    clip-path: polygon(100% 50%, 94% 100%, 6% 100%, 0% 50%, 6% 0%, 94% 0%);
+    &--full {
+        
 
-    &--tour {
-        position: relative;
-        width: 300px;
-        display: flex;
-        justify-content: center;
-        aspect-ratio: 20/3;
+        &--1 {
+            background-color: var(--color-3);
 
+            p {
+                color: var(--color-4);
+            }
+
+            svg path {
+                stroke: var(--color-4);
+            }
+        }
+
+        &--2 {
+            background-color: var(--color-4);
+
+            p {
+                color: var(--color-3);
+            }
+
+            svg path {
+                stroke: var(--color-3);
+            }
+        }
+    }
+
+    &--outline {
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: var(--color-3);
+            clip-path: polygon(100% 50%, 94% 100%, 6% 100%, 0% 50%, 6% 0%, 94% 0%, 100% 50%,
+                    calc(94% - 1px) calc(0% - -3.2px),
+                    calc(6% - -1px) calc(0% - -3.2px),
+                    calc(0% - -4px) calc(50% - 0px),
+                    calc(6% - -1px) calc(100% - 3.2px),
+                    calc(94% - 1px) calc(100% - 3.2px),
+                    calc(100% - 4px) calc(50% - 0px),
+                    calc(94% - 1px) calc(0% - -3.2px));
+        }
+        p {
+            color: var(--color-3);
+        }
+    }
+    
+    &--outline--full {
+        background-color: var(--color-1);
+        padding: 0.5rem 2rem;
+        width: 10rem;
+        
         &::before {
             content: "";
             position: absolute;
             inset: 0;
             background-color: var(--color-2);
             clip-path: polygon(100% 50%, 94% 100%, 6% 100%, 0% 50%, 6% 0%, 94% 0%, 100% 50%,
-                    calc(94% - 3px) calc(0% - -5.2px),
-                    calc(6% - -3px) calc(0% - -5.2px),
-                    calc(0% - -7px) calc(50% - 0px),
-                    calc(6% - -3px) calc(100% - 5.2px),
-                    calc(94% - 3px) calc(100% - 5.2px),
-                    calc(100% - 7px) calc(50% - 0px),
-                    calc(94% - 3px) calc(0% - -5.2px));
-
+                    calc(94% - 1px) calc(0% - -3.2px),
+                    calc(6% - -1px) calc(0% - -3.2px),
+                    calc(0% - -4px) calc(50% - 0px),
+                    calc(6% - -1px) calc(100% - 3.2px),
+                    calc(94% - 1px) calc(100% - 3.2px),
+                    calc(100% - 4px) calc(50% - 0px),
+                    calc(94% - 1px) calc(0% - -3.2px));
         }
+        p {
+            color: var(--color-3);
+        }
+    }
+
+    &--tour {
+        width: 300px;
     }
 }

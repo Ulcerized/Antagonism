@@ -1,0 +1,91 @@
+p {
+    font-size: 1.25rem;
+}
+
+
+.logo {
+    margin: auto;
+    width: 75%;
+}
+
+.albums {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+
+    .album {
+        display: flex;
+        justify-content: center;
+        max-width: 30%;    
+        
+        img {
+            cursor: pointer;
+            width: 100%;
+        }
+    }
+
+    .deactivated {
+        display: none;
+    }
+
+
+
+    .albumInfo {
+        display: none;
+    }
+
+    .activated {
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 40%;
+        }
+
+        .albumInfo {
+            width: 60%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            margin: 2rem;
+            padding: 2rem;
+            border: 2px solid var(--color-3);
+            border-radius: 5px;
+            gap: 1rem;
+
+            .exit {
+                position: absolute;
+                top: 0.25rem;
+                right: 0.25rem;
+                font-family: VHS Gothic;
+                color: var(--color-4);
+                cursor: pointer;
+            }
+
+            .hexbutton {
+                padding: 0.5rem 3rem;
+                font-family: Nova Flat;
+                align-self: center;
+                color: #eee;
+            }
+
+            h3 {
+                font-family: VHS Gothic;
+                font-size: 1.5rem;
+                color: var(--color-4);
+                margin-bottom: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+
+        }
+
+
+    }
+}

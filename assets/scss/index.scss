@@ -6,6 +6,7 @@
 @use "contact";
 @use "tour";
 @use "hexbutton";
+@use "bio";
 
 @font-face {
     font-family: 'VHS Gothic';
@@ -45,9 +46,14 @@
     gap: 2rem;
     clip-path: polygon(0 40px,40px 0,calc(100% - 40px) 0,100% 40px,100% 100%,0 100%);
 
-    h1 {
+    h1, h2 {
         font-family: VHS Gothic;
         font-size: 2rem;
+        color: var(--color-4);
+    }
+
+    p {
+        font-family: Nova Flat;
         color: var(--color-4);
     }
 }

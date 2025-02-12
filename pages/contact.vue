@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
-
 const ChosenClass = ref('black-mage')
 
 useHead({

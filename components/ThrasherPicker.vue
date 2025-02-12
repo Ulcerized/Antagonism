@@ -19,8 +19,8 @@ const thrashers = [{
   top: "50%"
 }, {
   name: 'raph',
-  fullname: 'Raphaël Gloglo',
-  stats: 'gloglo',
+  fullname: 'Raphaël Gloaguen',
+  stats: 'Glouglou',
   left: "50%",
   top: "50%"
 }]
@@ -28,7 +28,6 @@ const thrashers = [{
 var activated1 = ref('');
 
 const azertyuiop = (yomama: string) => {
-  console.log('plapoum')
   activated1.value = yomama
 }
 
@@ -128,7 +127,7 @@ const azertyuiop = (yomama: string) => {
 
 <style>
 .azerty {
-  width: 1000px;
+  width: 100%;
   position: relative;
 
   img {
@@ -185,7 +184,7 @@ const azertyuiop = (yomama: string) => {
       top: 0;
       left: 0;
       color: #111;
-      background-color: #eee;
+      background-color: var(--color-1);
       border: 4px solid var(--color-2);
       gap: 2rem;
       border-radius: 10px;
@@ -200,6 +199,7 @@ const azertyuiop = (yomama: string) => {
       p {
         font-family: Nova Flat;
         font-size: 1rem;
+        color: var(--color-4);
       }
     }
   }

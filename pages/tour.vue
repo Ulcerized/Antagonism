@@ -1,6 +1,6 @@
 <template>
   <div class="page tour">
-    <h1>CATCH US ON TOUR !</h1>
+    <h1>{{ $t('tour.title') }}</h1>
     <div class="select">
       <button v-for="tomselec in selectable" :key="tomselec" v-on:click="chargeDates(tomselec)"
         :class="{ active: selected === tomselec }">
@@ -24,9 +24,12 @@
 
 
 <script lang="ts" setup>
-const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'] as const
-var selected = ref('Future')
-const selectable = ['Future', 'Past']
+const { t } = useI18n({ useScope: "global" })
+
+
+const months = [t('tour.month.jan'), t('tour.month.feb'), t('tour.month.mar'), t('tour.month.apr'), t('tour.month.may'), t('tour.month.jun'), t('tour.month.jul'), t('tour.month.aug'), t('tour.month.sep'), t('tour.month.oct'), t('tour.month.nov'), t('tour.month.dec')] as const
+var selected = ref(t('tour.future'))
+const selectable = [t('tour.future'), t('tour.past')]
 const ticket = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 40 32" shape-rendering="crispEdges">
         <metadata>Made with Pixels to Svg https://codepen.io/shshaw/pen/XbxvNj</metadata>
         <path stroke="#000000"
@@ -60,12 +63,12 @@ onMounted(() => {
 })
 
 const chargeDates = (period: string) => {
-  if (period === 'Future') {
-    selected.value = 'Future'
+  if (period === selectable[0]) {
+    selected.value = selectable[0]
     tourDates = futureDates
   }
-  else if (period === 'Past') {
-    selected.value = 'Past'
+  else if (period === selectable[1]) {
+    selected.value = selectable[1]
     tourDates = pastDates
   }
 }
@@ -77,7 +80,7 @@ const formatDate = (date: string) => {
 
 const formatLineUp = (lineup: Array<string>) => {
   if (lineup.length > 1) {
-    let liste = 'With : '
+    let liste = t('tour.with')
     lineup.forEach(band => {
       if (band !== "Antagonism") {
         liste = liste + band + ', '
@@ -96,16 +99,16 @@ const formatButtons = (date: Array) => {
   const concertDate = new Date(date.datetime)
   const now = new Date()
   if (concertDate < now) {
-    return "<a target='_blank' href='" + date.url + "&trigger=rate' class='hexbutton hexbutton--outline hexbutton--tour'><p>I WAS THERE</p></a>"
+    return "<a target='_blank' href='" + date.url + "&trigger=rate' class='hexbutton hexbutton--outline hexbutton--tour'><p>" + t('tour.wathere') +"</p></a>"
   }
   else {
     let offers = date.offers[0]
     if (offers.length === 0) {
-      return "<a target='_blank' href='"+ date.url+ "&trigger=notify_me' class='hexbutton hexbutton--tour'><p>NOTIFY ME</p></a>"
+      return "<a target='_blank' href='"+ date.url+ "&trigger=notify_me' class='hexbutton hexbutton--tour'><p>" + t('tour.notify') +"</p></a>"
     }
     else {
       return "<a target='_blank' href='"+ offers.url + "' class='hexbutton hexbutton--full--1 hexbutton--tour'>"+ticket+"<p>TICKETS</p></a>" +
-      "<a target='_blank' href='"+ date.url+ "&trigger=rsvp_going' class='hexbutton hexbutton--full--2 hexbutton--tour'>"+bell+"<p>SET REMINDER</p></a>"
+      "<a target='_blank' href='"+ date.url+ "&trigger=rsvp_going' class='hexbutton hexbutton--full--2 hexbutton--tour'>"+bell+"<p>" + t('tour.reminder') +"</p></a>"
     }
   }
 }

@@ -1,28 +1,26 @@
 <script lang="ts" setup>
+const { t } = useI18n({ useScope: "global" })
+
 const thrashers = [{
   name: 'renan',
   fullname: 'Renan "Ulcer" Garriguenc',
-  stats: "Rôle : Basse, Chœur, le gars qui gère l'assurance et le site<br>Influences : Annihilator, Exodus, Anthrax, MOD, SOD, Megadeth, Death, Overkill<br>Meilleur concert : Municipal Waste, Lyon 2019<br>Album de Thrash préféré : Alice in Hell, Annihilator<br>Bière préféré : Blanche, Rousse<br>Tatouages : Oui<br>Conseil pour la jeunesse : Non<br><br>Actif dans le groupe depuis Mai 2019.<br>A participé à l'enregistrement de :<br>- World on Disease (2020)<br>- First in, First out (2023)'<br>",
-  left: "60%",
-  top: "50%"
+  stats: t('thrashers.renan.stats'),
+  left: "60%"
 }, {
   name: 'loic',
   fullname: 'Loïc Gasnier',
-  stats: "Loic",
-  left: "70%",
-  top: "50%"
+  stats: t('thrashers.loic.stats'),
+  left: "70%"
 }, {
   name: 'dylan',
   fullname: 'Dylan Anger',
-  stats: 'dilan',
-  left: "30%",
-  top: "50%"
+  stats: t('thrashers.dylan.stats'),
+  left: "30%"
 }, {
   name: 'raph',
   fullname: 'Raphaël Gloaguen',
-  stats: 'Glouglou',
-  left: "50%",
-  top: "50%"
+  stats: t('thrashers.raph.stats'),
+  left: "50%"
 }]
 
 var activated1 = ref('');
@@ -30,20 +28,16 @@ var activated1 = ref('');
 const azertyuiop = (yomama: string) => {
   activated1.value = yomama
 }
-
-
-
 </script>
 
 <template>
   <div class="azerty">
     <img src="assets/images/bioPic.jpeg" alt="biocancer">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-      viewBox="-1115 -757 2294 1521 " xml:space="preserve" class="svg">
+      viewBox="-1115 -760 2294 1521 " xml:space="preserve" class="svg">
       <g id="Calque_1">
 
-        <image v-on:click="azertyuiop('')" width="2294" height="1521" transform="matrix(1 0 0 1 -1115 -757)">
-        </image>
+        <polygon v-on:click="azertyuiop('')" points="-1200 -800, -1200 800, 1200 800, 1200 -800" style="fill: #00000000;"></polygon>
       </g>
       <g id="Calque_2" v-on:click="azertyuiop('renan')" :class="{ activated2: activated1 === 'renan' }">
         <g>
@@ -118,7 +112,7 @@ const azertyuiop = (yomama: string) => {
       </g>
     </svg>
     <div class="info" v-for="thrasher in thrashers" :class="{ activated: activated1 === thrasher.name }"
-      :style="{ left: thrasher.left, top: thrasher.top }">
+      :style="{ left: thrasher.left, top: '50%' }">
       <h3>{{ thrasher.fullname }}</h3>
       <p v-html="thrasher.stats"></p>
     </div>

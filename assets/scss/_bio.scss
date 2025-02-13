@@ -1,7 +1,15 @@
-p {
-    font-size: 1.25rem;
-}
+.bio {
+    .jump {
+        font-size: 1.25rem;
+        text-indent: 2rem each-line;
 
+
+        br {
+            margin-bottom: 1rem;
+        }
+
+    }
+}
 
 .logo {
     margin: auto;
@@ -16,8 +24,8 @@ p {
     .album {
         display: flex;
         justify-content: center;
-        max-width: 30%;    
-        
+        max-width: 30%;
+
         img {
             cursor: pointer;
             width: 100%;

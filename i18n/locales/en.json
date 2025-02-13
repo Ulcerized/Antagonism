@@ -1,0 +1,82 @@
+{
+    "homepage": {
+        "bio": "Biography",
+        "tour": "Tour",
+        "videos": "Videos",
+        "games": "Video Games",
+        "news": "News"
+    },
+
+    "options": {
+        "option":"OPTIONS",
+        "language": "LANGUAGE",
+        "nightmare": "NIGHTMARE",
+        "pointer": "POINTER",
+        "cursor": "CURSOR",
+        "shotgun": "SHOTGUN",
+        "exit": "EXIT",
+        "credits": "Website powered by <span class='color-3 dashed'>Ulcer</span><br>© 2025 ANTAGONISM - All rights reserved"
+    },
+
+    "tour": {
+        "title": "CATCH US ON TOUR !",
+        "month": {
+            "jan": "JAN",
+            "feb": "FEB",
+            "mar": "MAR",
+            "apr": "APR",
+            "may": "MAY",
+            "jun": "JUN",
+            "jul": "JUL",
+            "aug": "AUG",
+            "sep": "SEP",
+            "oct": "OCT",
+            "nov": "NOV",
+            "dec": "DEC"
+        },
+        "future": "Future",
+        "past": "Past",
+        "with": "With : ",
+        "reminder": "SET REMINDER",
+        "notify": "NOTIFY ME",
+        "wathere": "I WAS THERE"
+    },
+
+    "contact": {
+        "title" : "You've got an idea, a suggestion, a problem with the website ... ?",
+        "contactus": "Contact us !",
+        "class": "Class",
+        "classes": {
+            "blackmage": "Black Mage",
+            "monk": "Monk",
+            "redmage": "Red Mage",
+            "whitemage": "White Mage",
+            "warrior": "Warrior",
+            "thief": "Thief"
+
+        },
+        "name": "Name *",
+        "object": "Object *",
+        "send": "Send"
+    },
+    
+    "bio": {
+        "picker": "Choose your Thrasher",
+        "bio": "Antagonism is an Old School Thrash Metal band that emerged from the blazing ashes of two musical projects: Speed Hammer (Dylan Anger, Félix Cleyet-Marrel) and Zintar (Raphaël Gloaguen and Renan 'Ulcer' Garriguenc, following the end of their adventure with Unrest Fatalist). Formed in 2017, this quartet of Metal titans quickly carved their path in the underground scene.<br>After Ulcer's departure, Kévin Colin joined the band, and together they crafted their explosive debut EP, Thrashocalypse, in 2018. But this was just an appetizer. Soon, a new turning point emerged when Kévin also left, allowing Ulcer to make a triumphant return. Destiny was sealed with the recording of their first album, World on Disease, which was released in February 2020, just days before the world plunged into an unprecedented lockdown.<br>Faced with the impossibility of defending their opus on stage, Antagonism dove back into creation. The result: a second album with sharp riffs was recorded and ready to rock eardrums in 2023: First in, First out.<br>With three hard-hitting Thrash CDs to their name, the band continues to conquer stages. In 2024, they reached new heights by participating in the national finals of the Wacken Metal Battle, then igniting fans at the Hellfest Off. Antagonism embodies the essence of Old School Thrash, injecting the raw energy of the '80s directly into the veins of their audience.<br>Get ready, because Antagonism will soon be everywhere, ready to unleash a sonic storm!"
+    },
+
+    "thrashers": {
+        "renan": {
+            "stats": "Role : Bass, Additional voices, the guy who deals with the insurance and the website<br>Influences : Annihilator, Exodus, Anthrax, MOD, SOD, Megadeth, Death, Overkill<br>Best concert : Municipal Waste, Lyon 2019<br>Favorite Thrash album : Alice in Hell, Annihilator<br>Favorite beer : White, Red<br>Tattoos : Yes<br>Advice for the youth : No<br><br>In the band since May 2019.<br>Participated to the recordings of :<br>- World on Disease (2020)<br>- First in, First out (2023)<br>"
+        },
+        "loic": {
+            "stats": ""
+        },
+        "dylan": {
+            "stats": ""
+        },
+        "raph": {
+            "stats": "Glouglou"
+        }
+    }
+}

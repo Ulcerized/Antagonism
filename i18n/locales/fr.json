@@ -1,0 +1,81 @@
+{
+    "homepage": {
+        "bio": "Histoire",
+        "tour": "Concerts",
+        "videos": "Vidéos",
+        "games": "Jeux Vidéo",
+        "news": "Actualités"
+    },
+
+    "options": {
+        "option":"FRENCH",
+        "language": "LANGUE",
+        "nightmare": "CAUCHEMAR",
+        "pointer": "POINTEUR",
+        "cursor": "CURSEUR",
+        "shotgun": "FUSIL",
+        "exit": "SORTIE",
+        "credits": "Site créé par <span class='color-3 dashed'>Ulcer</span><br>© 2025 ANTAGONISM - Tous droits réservés"
+    },
+    "tour": {
+        "title": "RETROUVEZ-NOUS EN TOURNEE !",
+        "month": {
+            "jan": "JAN",
+            "feb": "FEV",
+            "mar": "MAR",
+            "apr": "AVR",
+            "may": "MAI",
+            "jun": "JUIN",
+            "jul": "JUIL",
+            "aug": "AOU",
+            "sep": "SEP",
+            "oct": "OCT",
+            "nov": "NOV",
+            "dec": "DEC"
+        },
+        "future": "Futur",
+        "past": "Passé",
+        "with": "Avec : ",
+        "reminder": "ME RELANCER",
+        "notify": "PREVENEZ MOI",
+        "wathere": "J'Y FUS"
+    },
+
+    "contact": {
+        "title" : "Vous avez une idée, une suggestion, un problème avec le site ... ?",
+        "contactus": "Contactez-nous !",
+        "class": "Classe",
+        "classes": {
+            "blackmage": "Mage Noir",
+            "monk": "Moine",
+            "redmage": "Mage Rouge",
+            "whitemage": "Mage Blanc",
+            "warrior": "Guerrier",
+            "thief": "Voleur"
+
+        },
+        "name": "Nom *",
+        "object": "Objet *",
+        "send": "Envoyer"
+    },
+    
+    "bio": {
+        "picker": "Choisis ton Thrasher",
+        "bio": "Antagonism est un groupe de Thrash Metal Old School qui surgit des cendres incandescentes de deux projets musicaux : Speed Hammer (Dylan Anger, Félix Cleyet-Marrel) et Zintar (Raphaël Gloaguen et Renan 'Ulcer' Garriguenc, à la fin de leur aventure Unrest Fatalist). Formé en 2017, ce quatuor de titans du Metal a rapidement tracé son chemin dans la scène underground.<br>Après le départ d'Ulcer, c'est Kévin Colin qui rejoint le groupe, et ensemble ils forgent leur premier EP détonant, Thrashocalypse, en 2018. Mais ce ne fut qu'une mise en bouche. Bientôt, un nouveau tournant se dessine lorsque Kévin quitte à son tour le navire, permettant à Ulcer de faire un retour fracassant. Le destin est scellé avec l'enregistrement de leur premier album, World on Disease, qui voit le jour en février 2020, quelques jours avant que le monde ne plonge dans un confinement sans précédent.<br>Face à l'impossibilité de défendre leur opus sur scène, Antagonism se replonge dans la création. Résultat : un second album aux riffs incisifs est enregistré, prêt à secouer les tympans en 2023 : First in, First out.<br>Avec trois CDs de Thrash percutant à leur actif, le groupe ne cesse de conquérir les scènes. En 2024, ils atteignent les sommets en participant à la finale nationale du Wacken Metal Battle, puis enflammant les fans au Hellfest Off. Antagonism incarne l'essence du Thrash Old School, injectant l'énergie brute des années 80 directement dans les veines de leur public.<br>Préparez-vous, car Antagonism sera bientôt partout, prêt à déclencher une tempête sonore !"
+    },
+
+    "thrashers": {
+        "renan": {
+            "stats": "Rôle : Basse, Chœur, le gars qui gère l'assurance et le site<br>Influences : Annihilator, Exodus, Anthrax, MOD, SOD, Megadeth, Death, Overkill<br>Meilleur concert : Municipal Waste, Lyon 2019<br>Album de Thrash préféré : Alice in Hell, Annihilator<br>Bière préféré : Blanche, Rousse<br>Tatouages : Oui<br>Conseil pour la jeunesse : Non<br><br>Actif dans le groupe depuis Mai 2019.<br>A participé à l'enregistrement de :<br>- World on Disease (2020)<br>- First in, First out (2023)<br>"
+        },
+        "loic": {
+            "stats": ""
+        },
+        "dylan": {
+            "stats": ""
+        },
+        "raph": {
+            "stats": "Glouglou"
+        }
+    }
+}

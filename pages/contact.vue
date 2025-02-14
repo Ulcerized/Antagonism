@@ -15,7 +15,7 @@ useHead({
       <div class="form-fields input-1">
         <img :src="'/classes/' + ChosenClass + '.gif'" :alt="ChosenClass">
         <label for="class">{{ $t('contact.class') }}</label>
-        <select type="text" id="class" name="class" v-model="ChosenClass">
+        <select id="class" name="class" v-model="ChosenClass">
           <option value="black-mage">{{ $t('contact.classes.blackmage') }}</option>
           <option value="monk">{{ $t('contact.classes.monk') }}</option>
           <option value="red-mage">{{ $t('contact.classes.redmage') }}</option>

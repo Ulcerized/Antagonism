@@ -9,31 +9,39 @@
     }
 
     svg {
-        height: 32px;
+        height: 2rem;
         margin: 0;
 
         path {
             stroke: var(--color-4);
         }
     }
+}
 
-    .youtube:hover path {
-        stroke: #FF0000;
-    }
+.youtube:hover path {
+    stroke: #FF0000 !important;
+}
 
-    .facebook:hover path {
-        stroke: #3b5998;
-    }
+.facebook:hover path {
+    stroke: #3b5998 !important;
+}
 
-    .instagram:hover path {
-        stroke: #DD2A7B;
-    }
+.instagram:hover path {
+    stroke: #DD2A7B !important;
+}
 
-    .spotify:hover path {
-        stroke: #1ED760;
-    }
+.spotify:hover path {
+    stroke: #1ED760 !important;
+}
 
-    .mail:hover path {
-        stroke: coral;
-    }
+.mail:hover path {
+    stroke: coral !important;
+}
+
+.amazon:hover path {
+    stroke: #0077C1 !important;
+}
+
+.apple:hover path {
+    stroke: #FC3C44 !important;
 }

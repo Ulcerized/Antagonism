@@ -8,16 +8,16 @@
       </button>
     </div>
     <div>
-      <a v-for="date in tourDates" :key="date.id" :href="date.url" target="_blank" class="datesList">
-        <div class="details">
+      <div v-for="date in tourDates" :key="date.id" class="datesList">
+        <a class="details" :href="date.url" target="_blank">
           <p class="date">{{ formatDate(date.datetime) }}</p>
           <p class="venue">{{ date.venue.name }}<br>
             {{ date.venue.city }}, {{ date.venue.country }}</p>
           <p class="lineup"> {{ formatLineUp(date.lineup) }}</p>
-        </div>
+          </a>
         <div class="buttons" v-html="formatButtons(date)">
         </div>
-      </a>
+      </div>
     </div>
   </div>
 </template>
@@ -26,14 +26,13 @@
 <script lang="ts" setup>
 const { t } = useI18n({ useScope: "global" })
 
-
 const months = [t('tour.month.jan'), t('tour.month.feb'), t('tour.month.mar'), t('tour.month.apr'), t('tour.month.may'), t('tour.month.jun'), t('tour.month.jul'), t('tour.month.aug'), t('tour.month.sep'), t('tour.month.oct'), t('tour.month.nov'), t('tour.month.dec')] as const
 var selected = ref(t('tour.future'))
 const selectable = [t('tour.future'), t('tour.past')]
 const ticket = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 40 32" shape-rendering="crispEdges">
         <metadata>Made with Pixels to Svg https://codepen.io/shshaw/pen/XbxvNj</metadata>
         <path stroke="#000000"
-            d="M29 0h2M27 1h2M31 1h1M25 2h2M31 2h1M23 3h2M32 3h1M21 4h2M32 4h1M19 5h2M33 5h1M17 6h2M33 6h1M15 7h2M34 7h1M1 8h38M0 9h40M0 10h2M29 10h1M38 10h2M0 11h2M29 11h1M38 11h2M0 12h2M38 12h2M0 13h2M29 13h1M38 13h2M0 14h2M29 14h1M38 14h2M0 15h3M37 15h3M1 16h3M29 16h1M36 16h3M2 17h3M29 17h1M35 17h3M3 18h2M35 18h2M3 19h2M29 19h1M35 19h2M3 20h2M29 20h1M35 20h2M3 21h2M35 21h2M2 22h3M29 22h1M35 22h3M1 23h3M29 23h1M36 23h3M0 24h3M37 24h3M0 25h2M29 25h1M38 25h2M0 26h2M29 26h1M38 26h2M0 27h2M38 27h2M0 28h2M29 28h1M38 28h2M0 29h2M29 29h1M38 29h2M0 30h40M1 31h38" />
+            d="M29 0h2M27 1h2M31 1h1M25 2h2M31 2h1M23 3h2M32 3h1M21 4h2M32 4h1M19 5h2M33 5h1M17 6h2M33 6h1M15 7h2M34 7h1M1 8h38M0 9h40M0 10h29M30 10h10M0 11h29M30 11h10M0 12h40M0 13h29M30 13h10M0 14h29M30 14h10M0 15h40M1 16h28M30 16h9M2 17h27M30 17h8M3 18h34M3 19h26M30 19h7M3 20h26M30 20h7M3 21h34M2 22h27M30 22h8M1 23h28M30 23h9M0 24h40M0 25h29M30 25h10M0 26h29M30 26h10M0 27h40M0 28h29M30 28h10M0 29h29M30 29h10M0 30h40M1 31h38" />
     </svg>`
 const bell = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 32 32" shape-rendering="crispEdges">
         <metadata>Made with Pixels to Svg https://codepen.io/shshaw/pen/XbxvNj</metadata>
@@ -53,11 +52,15 @@ const pastDates = computed(() => {
 const futureDates = computed(() => {
   return future && future.value || []
 })
+
 var tourDates = futureDates
 
+const title = "Tour | Antagonism"
+
 useHead({
-  title: "Tour | Antagonism",
+  title: title,
 })
+
 onMounted(() => {
   // cette fonction est lancée quand le composant est prêt
 })

@@ -73,18 +73,27 @@
                 cursor: pointer;
             }
 
-            .hexbutton {
-                padding: 0.5rem 3rem;
-                font-family: Nova Flat;
-                align-self: center;
-                color: #eee;
+            .listenToIt {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+
+
+                svg {
+                    height: 2rem;
+                }
+
+                path {
+                    stroke: var(--color-4);
+                }
             }
 
             h3 {
                 font-family: VHS Gothic;
                 font-size: 1.5rem;
                 color: var(--color-4);
-                margin-bottom: 2rem;
+                margin-bottom: 1rem;
             }
 
             p {

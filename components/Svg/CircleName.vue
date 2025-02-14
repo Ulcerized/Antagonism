@@ -8,12 +8,7 @@
           </textPath>
         </text>
       </g>
-      <path :id="name" d="
-        M 80 80
-        m 65, 0
-        a 65,65 0 1,1 -130,0
-        a 65,65 0 1,1  130,0
-        " fill="none"></path>
+      <path :id="name" d="M 80 80 m 65, 0 a 65,65 0 1,1 -130,0 a 65,65 0 1,1  130,0" fill="none"></path>
     </svg>
   </div>
 </template>

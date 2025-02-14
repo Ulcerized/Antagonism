@@ -3,7 +3,7 @@
         <div class="options opener" v-on:click="openOptions">
             <p>OPTIONS</p>
         </div>
-        <div class="overlay" :style="{ 'display': optionsMenu }"></div>
+        <div class="overlay" :style="{ 'display': optionsMenu }" v-on:click="closeOptions"></div>
         <div class="options menu" :style="{ 'display': optionsMenu }">
             <div class="cross" v-on:click="closeOptions">
                 <p>X</p>

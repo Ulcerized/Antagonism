@@ -1,27 +1,29 @@
 <script lang="ts" setup>
 const { t } = useI18n({ useScope: "global" })
 
-const thrashers = [{
-  name: 'renan',
-  fullname: 'Renan "Ulcer" Garriguenc',
-  stats: t('thrashers.renan.stats'),
-  left: "60%"
-}, {
-  name: 'loic',
-  fullname: 'Loïc Gasnier',
-  stats: t('thrashers.loic.stats'),
-  left: "70%"
-}, {
-  name: 'dylan',
-  fullname: 'Dylan Anger',
-  stats: t('thrashers.dylan.stats'),
-  left: "30%"
-}, {
-  name: 'raph',
-  fullname: 'Raphaël Gloaguen',
-  stats: t('thrashers.raph.stats'),
-  left: "50%"
-}]
+const thrashers = [
+  {
+    name: 'renan',
+    fullname: 'Renan "Ulcer" Garriguenc',
+    stats: t('thrashers.renan.stats'),
+    left: "60%"
+  }, {
+    name: 'loic',
+    fullname: 'Loïc Gasnier',
+    stats: t('thrashers.loic.stats'),
+    left: "70%"
+  }, {
+    name: 'dylan',
+    fullname: 'Dylan Anger',
+    stats: t('thrashers.dylan.stats'),
+    left: "30%"
+  }, {
+    name: 'raph',
+    fullname: 'Raphaël Gloaguen',
+    stats: t('thrashers.raph.stats'),
+    left: "50%"
+  }
+]
 
 var activated1 = ref('');
 
@@ -37,7 +39,8 @@ const azertyuiop = (yomama: string) => {
       viewBox="-1115 -760 2294 1521 " xml:space="preserve" class="svg">
       <g id="Calque_1">
 
-        <polygon v-on:click="azertyuiop('')" points="-1200 -800, -1200 800, 1200 800, 1200 -800" style="fill: #00000000;"></polygon>
+        <polygon v-on:click="azertyuiop('')" points="-1200 -800, -1200 800, 1200 800, 1200 -800"
+          style="fill: #00000000;"></polygon>
       </g>
       <g id="Calque_2" v-on:click="azertyuiop('renan')" :class="{ activated2: activated1 === 'renan' }">
         <g>
@@ -194,6 +197,7 @@ const azertyuiop = (yomama: string) => {
         font-family: Nova Flat;
         font-size: 1rem;
         color: var(--color-4);
+        line-height: 1.25rem
       }
     }
   }

@@ -18,11 +18,11 @@
                     <div class="bar"></div>
                     <button v-on:click="setLocale('fr')">FRANÇAIS</button>
                 </div>
-                <div class="choice" :class="{ on: nightmare }">
-                    <button v-on:click="toggleNightmare(false)">{{ night[0] }}</button>
+                <div class="choice" :class="{ on: theme == 'nightmare' }">
+                    <button v-on:click="toggleNightmare(false)">OFF</button>
                     <p class="hexbutton hexbutton--outline--full">{{ $t('options.nightmare') }}</p>
                     <div class="bar"></div>
-                    <button v-on:click="toggleNightmare(true)">{{ night[2] }}</button>
+                    <button v-on:click="toggleNightmare(true)">ON</button>
                 </div>
                 <div class="choice" :class="{ on: shotgun }">
                     <button v-on:click="toggleShotgun(false)">{{ $t('options.pointer') }}</button>
@@ -44,6 +44,9 @@
 
 <script lang="ts" setup>
 const { locale, setLocale, t } = useI18n({ useScope: "global" });
+const cookie = useCookie('data-theme')
+
+cookie.value = cookie.value || 'dark'
 
 const optionsMenu = ref('none')
 
@@ -55,27 +58,37 @@ const closeOptions = () => {
     optionsMenu.value = 'none'
 }
 
-var night = ['OFF', 'NIGHTMARE', 'ON'] as const
-var point = ['POINTER', 'CURSOR', 'SHOTGUN'] as const
-
-
-
-let test = t('options.option')
-
-var nightmare = ref(true)
+var theme = ref(cookie.value)
 var language = ref(locale)
 var shotgun = ref(false)
 
+useHead({
+    htmlAttrs: {
+        'data-theme': cookie.value
+    }
+})
+
+
 
 const toggleNightmare = (input: boolean) => {
-  if (!input) {
-    nightmare.value = false
-    document.documentElement.setAttribute('data-theme', 'dark')
-  }
-  else {
-    nightmare.value = true
-    document.documentElement.setAttribute('data-theme', 'nightmare')
-  }
+    if (!input) {
+        cookie.value = 'dark'
+        theme.value = cookie.value
+        useHead({
+            htmlAttrs: {
+                'data-theme': cookie.value
+            }
+        })
+    }
+    else {
+        cookie.value = 'nightmare'
+        theme.value = cookie.value
+        useHead({
+            htmlAttrs: {
+                'data-theme': cookie.value
+            }
+        })
+    }
 }
 
 const toggleShotgun = (input: boolean) => {

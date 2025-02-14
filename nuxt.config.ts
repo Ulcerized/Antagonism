@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   css: ['~/assets/scss/index.scss'],
   modules: ['@nuxt/image', '@nuxtjs/i18n'],
   i18n: {    
-    langDir: "locales",
+    langDir: "locales", 
     locales: [
         {
             code: 'en',

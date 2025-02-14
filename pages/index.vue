@@ -3,9 +3,8 @@ useHead({
   title: "ANTAGONISM | Old School Thrash Metal",
 })
 
-setPageLayout('empty')
 definePageMeta({
-  layout: false,
+  layout: 'empty',
 });
 
 </script>

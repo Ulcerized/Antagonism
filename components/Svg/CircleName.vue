@@ -3,17 +3,17 @@
     <svg width="100%" height="100%" style="position: absolute;">
       <g text-anchor="middle">
         <text dy="5">
-          <textPath href="#circlePath" startOffset="69%">
+          <textPath :href="'#'+name" startOffset="69%">
             {{ name }}
           </textPath>
         </text>
       </g>
-      <path id="circlePath" d="
+      <path :id="name" d="
         M 80 80
         m 65, 0
         a 65,65 0 1,1 -130,0
         a 65,65 0 1,1  130,0
-        " fill="none" />
+        " fill="none"></path>
     </svg>
   </div>
 </template>

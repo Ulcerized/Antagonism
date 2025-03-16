@@ -43,7 +43,7 @@
 </template>
 
 <script lang="ts" setup>
-const { locale, setLocale, t } = useI18n({ useScope: "global" });
+const { locale, setLocale } = useI18n({ useScope: "global" });
 const cookie = useCookie('data-theme')
 
 cookie.value = cookie.value || 'dark'

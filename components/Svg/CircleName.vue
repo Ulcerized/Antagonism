@@ -16,5 +16,3 @@
 <script lang="ts" setup>
 const { name } = defineProps(['name'])
 </script>
-
-<style></style>

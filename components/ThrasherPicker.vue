@@ -25,24 +25,24 @@ const thrashers = [
   }
 ]
 
-var activated1 = ref('');
+var currentThrasher = ref('');
 
-const azertyuiop = (yomama: string) => {
-  activated1.value = yomama
+const selectedThrasher = (musician: string) => {
+  currentThrasher.value = musician
 }
 </script>
 
 <template>
-  <div class="azerty">
-    <img src="assets/images/bioPic.jpeg" alt="biocancer">
+  <div class="thrasherPicker">
+    <img src="assets/images/bioPic.jpeg" alt="Antagonism">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
       viewBox="-1115 -760 2294 1521 " xml:space="preserve" class="svg">
       <g id="Calque_1">
 
-        <polygon v-on:click="azertyuiop('')" points="-1200 -800, -1200 800, 1200 800, 1200 -800"
+        <polygon v-on:click="selectedThrasher('')" points="-1200 -800, -1200 800, 1200 800, 1200 -800"
           style="fill: #00000000;"></polygon>
       </g>
-      <g id="Calque_2" v-on:click="azertyuiop('renan')" :class="{ activated2: activated1 === 'renan' }">
+      <g id="Calque_2" v-on:click="selectedThrasher('renan')" :class="{ thrashSelected: currentThrasher === 'renan' }">
         <g>
           <polygon class="st0" points="-932.5,759.5 -844.3,591.8 -894.2,291.7 -966.1,469.6 -1052.7,472.4 -1073.5,90.3 -1027.2,-170.5 
 			-872.2,-172.5 -810.9,-95.1 -382.8,-165.6 -267,-213.9 -237.5,-102.6 -256.4,153.8 -448.5,76 -585.2,164 -479.8,573.3 
@@ -60,7 +60,7 @@ const azertyuiop = (yomama: string) => {
         <line class="st2" x1="-1042.7" y1="156.1" x2="-692.3" y2="-89.3" />
         <line class="st2" x1="-1033.1" y1="-49.3" x2="-880.4" y2="-156.3" />
       </g>
-      <g id="Calque_3" v-on:click="azertyuiop('loic')" :class="{ activated2: activated1 === 'loic' }">
+      <g id="Calque_3" v-on:click="selectedThrasher('loic')" :class="{ thrashSelected: currentThrasher === 'loic' }">
         <g>
           <polygon class="st0" points="-495.4,-166.3 -364.2,-367 -327.3,-622.4 -262.6,-647.4 -100.4,-633.8 -13.7,-466.4 17.1,-181.7 
 			-64.9,82.5 -218.3,35.3 -213.1,-105.1 -352.9,141.6 -445.3,167.6 		" />
@@ -76,7 +76,7 @@ const azertyuiop = (yomama: string) => {
         <line class="st2" x1="-469.7" y1="-58.2" x2="-17.5" y2="-374.9" />
         <line class="st2" x1="-211" y1="-41.6" x2="5.1" y2="-192.8" />
       </g>
-      <g id="Calque_4" v-on:click="azertyuiop('dylan')" :class="{ activated2: activated1 === 'dylan' }">
+      <g id="Calque_4" v-on:click="selectedThrasher('dylan')" :class="{ thrashSelected: currentThrasher === 'dylan' }">
         <g>
           <polygon class="st0" points="383.2,696.3 309.4,383.7 312.9,714 106.7,721.3 139.3,608.7 105.2,385.6 125.7,302.2 29.8,186.5 
 			132.4,112.5 177.4,-47.1 237.5,-96.4 290.9,-212.4 446.6,-212.4 460.2,-99.1 540.3,9.2 512.9,212.8 459.5,260 563.6,690.2 
@@ -96,7 +96,7 @@ const azertyuiop = (yomama: string) => {
         <line class="st2" x1="330.7" y1="419.2" x2="463" y2="326.5" />
         <line class="st2" x1="371.9" y1="587.2" x2="502.3" y2="495.9" />
       </g>
-      <g id="Calque_5" v-on:click="azertyuiop('raph')" :class="{ activated2: activated1 === 'raph' }">
+      <g id="Calque_5" v-on:click="selectedThrasher('raph')" :class="{ thrashSelected: currentThrasher === 'raph' }">
         <g>
           <polygon class="st0" points="927.4,759.5 798.7,450.4 687.4,759.5 514.7,759.5 648.3,-72.2 864.9,-279.7 1086.6,-182.5 
 			1154.8,-14.2 1017.3,269.3 1079.5,689.8 1108.1,759.5 		" />
@@ -114,7 +114,7 @@ const azertyuiop = (yomama: string) => {
         <line class="st2" x1="551.6" y1="624" x2="780.5" y2="463.7" />
       </g>
     </svg>
-    <div class="info" v-for="thrasher in thrashers" :class="{ activated: activated1 === thrasher.name }"
+    <div class="info" v-for="thrasher in thrashers" :class="{ activated: currentThrasher === thrasher.name }"
       :style="{ left: thrasher.left, top: '50%' }">
       <h3>{{ thrasher.fullname }}</h3>
       <p v-html="thrasher.stats"></p>
@@ -123,7 +123,7 @@ const azertyuiop = (yomama: string) => {
 </template>
 
 <style>
-.azerty {
+.thrasherPicker {
   width: 100%;
   position: relative;
 
@@ -157,7 +157,7 @@ const azertyuiop = (yomama: string) => {
 
   }
 
-  .activated2 {
+  .thrashSelected {
     .st1 {
       fill: #FFF;
     }

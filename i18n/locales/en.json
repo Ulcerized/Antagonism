@@ -1,6 +1,6 @@
 {
     "homepage": {
-        "bio": "Biography",
+        "biography": "Biography",
         "tour": "Tour",
         "videos": "Videos",
         "games": "Video Games",
@@ -39,18 +39,18 @@
         "with": "With : ",
         "reminder": "SET REMINDER",
         "notify": "NOTIFY ME",
-        "wathere": "I WAS THERE"
+        "iWasThere": "I WAS THERE"
     },
 
     "contact": {
         "title" : "You've got an idea, a suggestion, a problem with the website ... ?",
-        "contactus": "Contact us !",
+        "contactUs": "Contact us !",
         "class": "Class",
         "classes": {
-            "blackmage": "Black Mage",
+            "blackMage": "Black Mage",
             "monk": "Monk",
-            "redmage": "Red Mage",
-            "whitemage": "White Mage",
+            "redMage": "Red Mage",
+            "whiteMage": "White Mage",
             "warrior": "Warrior",
             "thief": "Thief"
 

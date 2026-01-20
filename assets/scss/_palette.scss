@@ -4,17 +4,17 @@
     --color-3 : #F23030;
     --color-4 : #EEEEEE;
     --color-1-trans : rgba(17,17,17,0.8);
-    --background-image : url("/assets/images/BgDefault.png");
+    --background-image : url("/assets/images/common/background-default.png");
     --background-gradient : linear-gradient(#111111a0, #111111a0);
     --logo-215 : url("/assets/images/215.png")
 }
 
 [data-theme="nightmare"] {
     --color-1 : #EEEEEE;
-    --color-2 : #FF46A2;
-    --color-3 : #9B6A94;
+    --color-3 : #FF46A2;
+    --color-2 : #9B6A94;
     --color-4 : #333333;
     --color-1-trans : rgba(238,238,238,0.8);
-    --background-image : url("/assets/images/BgNightmare.png");
+    --background-image : url("/assets/images/common/background-nightmare.png");
     --background-gradient : linear-gradient(#eeeeeea0, #eeeeeea0);
 }

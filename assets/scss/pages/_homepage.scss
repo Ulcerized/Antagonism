@@ -1,0 +1,87 @@
+#homepage {
+
+    .solar-system {
+        display: grid;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        a {
+            grid-area: 1/ 1;
+            place-self: center;
+            --planet-position: calc(var(--planet-number) * 1turn / var(--number-of-planets));
+            transform:
+                translateX(calc(calc(16rem * cos(var(--planet-position)) * cos(-20deg)) - calc(12rem * sin(var(--planet-position)) * sin(-20deg)))) // x = a * cos(t) * cos(d) - b * sin(t) * sin(d)
+                translateY(calc(calc(16rem * cos(var(--planet-position)) * sin(-20deg)) + calc(12rem * sin(var(--planet-position)) * cos(-20deg)))); // y = a * cos(t) * sin(d) + b * sin(t) * cos(d)
+        }
+
+        img {
+            height: 5rem;
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .logo-215 {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 12rem;
+        animation: 10s linear infinite ominous_glow;
+    }
+
+    .circle-name {
+        height: 170px;
+        width: 170px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+
+        path {
+            stroke: var(--color-4);
+            opacity: 0;
+        }
+
+        text {
+            font-family: VHS Gothic;
+            font-size: 1rem;
+            fill: var(--color-4);
+        }
+
+        :hover {
+            animation: 0.25s get_rotated_idiot;
+        }
+    }
+
+    .disabled {
+
+        img {
+            filter: grayscale(100%);
+        }
+
+        ::after {
+            content: "Work in Progress";
+            font: 1.25rem VHS Gothic;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--color-2);
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+    }
+}
+
+@keyframes ominous_glow {
+    50% {
+        filter: drop-shadow(0 0 0.75rem var(--color-2));
+    }
+}
+
+@keyframes get_rotated_idiot {
+    100% {
+        rotate: 1turn;
+    }
+}

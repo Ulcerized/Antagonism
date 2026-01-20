@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 const { t } = useI18n()
 
-const albums = [
+const ALBUMS = [
   {
     name: "First in, First out",
-    released: new Date("2023-03-15"),
-    desc: t('bio.albums.fifo'),
-    imgSrc: "../albums/albumFiFo.jpg",
+    releaseDate: new Date("2023-03-15"),
+    description: t('bio.albums.fifo'),
+    imagePath: "../albums/first-in-first-out.jpg",
     links: {
       spotify: "https://open.spotify.com/intl-fr/album/2c0YtWBdBAZ3szrS8b23Z5",
       youtube: "https://music.youtube.com/playlist?list=OLAK5uy_kFF17KedIyeH3k2XmkWTSyFZe8gjpVGgI",
@@ -16,9 +16,9 @@ const albums = [
   },
   {
     name: "World on Disease",
-    released: new Date("2020-02-29"),
-    desc: t('bio.albums.wod'),
-    imgSrc: "../albums/albumWoD.jpg",
+    releaseDate: new Date("2020-02-29"),
+    description: t('bio.albums.wod'),
+    imagePath: "../albums/world-on-disease.jpg",
     links: {
       spotify: "https://open.spotify.com/intl-fr/album/686Nvj4FaGgnzPZu88vrGo",
       youtube: "https://music.youtube.com/playlist?list=OLAK5uy_m4OzgbXAztV2uLW5drKvzNXPQbDw8XoTw",
@@ -28,9 +28,9 @@ const albums = [
   },
   {
     name: "Thrashocalypse",
-    released: new Date("2018-03-01"),
-    desc: t('bio.albums.thrasho'),
-    imgSrc: "../albums/albumThrasho.jpg",
+    releaseDate: new Date("2018-03-01"),
+    description: t('bio.albums.thrasho'),
+    imagePath: "../albums/thrashocalypse.jpg",
     links: {
       spotify: "https://open.spotify.com/intl-fr/album/7Jmp8260WKGbHccUlBp34q",
       youtube: "https://music.youtube.com/playlist?list=OLAK5uy_lRxRtzyyKvJb20vCH2gByiMnZokcu1yz0",
@@ -40,41 +40,39 @@ const albums = [
   }
 ]
 
-var selected = ref('')
+const SELECTED_ALBUM = ref('')
 
-
-
-const changeAlbum = (album: string) => {
-  if (selected.value === album) {
-    selected.value = ""
+const change_album = (album: string) => {
+  if (SELECTED_ALBUM.value === album) {
+    SELECTED_ALBUM.value = ""
   }
   else {
-    selected.value = album
+    SELECTED_ALBUM.value = album
   }
 }
 </script>
 
 <template>
-  <div class="albums">
-    <div class="album" v-for="album in albums"
-      :class="{ activated: selected === album.name, deactivated: selected != album.name && selected != '' }">
-      <img :src="album.imgSrc" :alt="album.name" v-on:click="changeAlbum(album.name)">
-      <div class="albumInfo">
-        <p v-on:click="changeAlbum('')" class="exit">X</p>
-        <h3>{{ album.name }} - {{ album.released.getFullYear() }}</h3>
-        <p v-html="album.desc"></p>
-        <div class="listenToIt">
+  <div id="albums-info">
+    <div class="album" v-for="album in ALBUMS"
+      :class="{ selectedAlbum: SELECTED_ALBUM === album.name, unselectedAlbum: SELECTED_ALBUM != album.name && SELECTED_ALBUM != '' }">
+      <img :src="album.imagePath" :alt="album.name" v-on:click="change_album(album.name)">
+      <div class="album-text">
+        <p v-on:click="change_album('')" class="exit">X</p>
+        <h3>{{ album.name }} - {{ album.releaseDate.getFullYear() }}</h3>
+        <p v-html="album.description"></p>
+        <div class="listening-links">
           <a :href="album.links.youtube" class="youtube">
-            <SvgYoutube></SvgYoutube>
+            <SvgYoutube />
           </a>
           <a :href="album.links.apple" class="apple">
-            <SvgApple></SvgApple>
+            <SvgApple />
           </a>
           <a :href="album.links.amazon" class="amazon">
-            <SvgAmazon></SvgAmazon>
+            <SvgAmazon />
           </a>
           <a :href="album.links.spotify" class="spotify">
-            <SvgSpotify></SvgSpotify>
+            <SvgSpotify />
           </a>
         </div>
       </div>

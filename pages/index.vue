@@ -10,30 +10,30 @@ definePageMeta({
 </script>
 
 <template>
-  <div>
-    <Socials class="socials"></Socials>
-    <img src="../assets/images/215.png" alt="215" class="logo215">
-    <div class="menuhp container" style="--m:7">
-      <a href="#" style="--i: 0" title="Videos"><img src="../assets/images/video.png" alt="Videos">
-        <SvgCircleName :name="$t('homepage.videos')" class="CircleName"></SvgCircleName>
+  <div id="homepage">
+    <Socials />
+    <img src="../assets/images/homepage/icon-215-logo.png" alt="215" class="logo-215">
+    <div class="solar-system" style="--number-of-planets:7">
+      <a style="--planet-number: 0" title="Videos" class="disabled"><img src="../assets/images/homepage/icon-videos.png" alt="Videos">
+        <SvgHomepageCircleName :pageName="$t('homepage.videos')" class="circle-name"/>
       </a>
-      <a href="#" style="--i: 1" title="Games"><img src="../assets/images/arcade.png" alt="Games">
-        <SvgCircleName :name="$t('homepage.games')" class="CircleName"></SvgCircleName>
+      <a style="--planet-number: 1" title="Games" class="disabled"><img src="../assets/images/homepage/icon-video-games.png" alt="Games">
+        <SvgHomepageCircleName :pageName="$t('homepage.games')" class="circle-name" />
       </a>
-      <a href="#" style="--i: 2" title="Merch"><img src="../assets/images/merch.png" alt="Merch">
-        <SvgCircleName name="Merch" class="CircleName"></SvgCircleName>
+      <a style="--planet-number: 2" title="Merch" class="disabled"><img src="../assets/images/homepage/icon-merch.png" alt="Merch">
+        <SvgHomepageCircleName pageName="Merch" class="circle-name" />
       </a>
-      <a href="#" style="--i: 3" title="News"><img src="../assets/images/news.png" alt="News">
-        <SvgCircleName :name="$t('homepage.news')" class="CircleName"></SvgCircleName>
+      <a style="--planet-number: 3" title="News" class="disabled"><img src="../assets/images/homepage/icon-news.png" alt="News">
+        <SvgHomepageCircleName :pageName="$t('homepage.news')" class="circle-name" />
       </a>
-      <a :href="$localePath('contact')" style="--i: 4" title="Contact"><img src="../assets/images/phone.png" alt="Contact">
-        <SvgCircleName name="Contact" class="CircleName"></SvgCircleName>
+      <a :href="$localePath('contact')" style="--planet-number: 4" title="Contact"><img src="../assets/images/homepage/icon-contact.png" alt="Contact">
+        <SvgHomepageCircleName pageName="Contact" class="circle-name" />
       </a>
-      <a :href="$localePath('bio')" style="--i: 5" title="Biography"><img src="../assets/images/livre.png" alt="Biography">
-        <SvgCircleName :name="$t('homepage.bio')" class="CircleName"></SvgCircleName>
+      <a :href="$localePath('biography')" style="--planet-number: 5" title="Biography"><img src="../assets/images/homepage/icon-biography.png" alt="Biography">
+        <SvgHomepageCircleName :pageName="$t('homepage.biography')" class="circle-name" />
       </a>
-      <a :href="$localePath('tour')" style="--i: 6" title="Tour"><img src="../assets/images/tour.png" alt="Tour">
-        <SvgCircleName :name="$t('homepage.tour')" class="CircleName"></SvgCircleName>
+      <a :href="$localePath('tour')" style="--planet-number: 6" title="Tour"><img src="../assets/images/homepage/icon-tour.png" alt="Tour">
+        <SvgHomepageCircleName :pageName="$t('homepage.tour')" class="circle-name" />
       </a>
     </div>
   </div>

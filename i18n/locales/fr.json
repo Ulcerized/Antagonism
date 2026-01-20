@@ -1,6 +1,6 @@
 {
     "homepage": {
-        "bio": "Histoire",
+        "biography": "Histoire",
         "tour": "Concerts",
         "videos": "Vidéos",
         "games": "Jeux Vidéo",
@@ -37,17 +37,17 @@
         "with": "Avec : ",
         "reminder": "ME RELANCER",
         "notify": "PREVENEZ MOI",
-        "wathere": "J'Y FUS"
+        "iWasThere": "J'Y FUS"
     },
     "contact": {
         "title": "Vous avez une idée, une suggestion, un problème avec le site ... ?",
-        "contactus": "Contactez-nous !",
+        "contactUs": "Contactez-nous !",
         "class": "Classe",
         "classes": {
-            "blackmage": "Mage Noir",
+            "blackMage": "Mage Noir",
             "monk": "Moine",
-            "redmage": "Mage Rouge",
-            "whitemage": "Mage Blanc",
+            "redMage": "Mage Rouge",
+            "whiteMage": "Mage Blanc",
             "warrior": "Guerrier",
             "thief": "Voleur"
         },

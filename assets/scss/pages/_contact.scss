@@ -11,7 +11,7 @@
         grid-template-areas:
             "title title"
             "class name"
-            "mail object"
+            "mail subject"
             "message message"
             "send send";
         color: #00aaff;
@@ -83,8 +83,8 @@
             grid-area: mail;
         }
 
-        .input-object {
-            grid-area: object;
+        .input-subject {
+            grid-area: subject;
         }
 
         .input-message {

@@ -37,9 +37,9 @@ useHead({
         <input type="email" id="email" name="email" required>
       </div>
 
-      <div class="input-object">
-        <label for="object">{{ $t('contact.object') }}</label>
-        <input id="object" name="object" required>
+      <div class="input-subject">
+        <label for="subject">{{ $t('contact.subject') }}</label>
+        <input id="subject" name="subject" required>
       </div>
 
       <div class="input-message">

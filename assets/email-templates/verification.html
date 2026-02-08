@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ subject }}</title>
+    <style>
+        body {
+            background-image: linear-gradient(#393AB0, #020069);
+            box-shadow: 0 0 1px 1px #757575,
+                0 0 1px 3px #eeeeee,
+                0 0 0px 5px #757575;
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+
+        #message {
+            margin: auto;
+            width: 80%;
+            display: flex;
+            justify-content: left;
+            gap: 10px;
+            align-items: flex-start;
+            height: fit-content;
+        }
+
+        #message .name {
+            color: white;
+            margin: 0;
+        }
+
+        #message .name span {
+            color: coral;
+            font-weight: bold;
+        }
+
+        #message .message {
+            white-space: pre-line;
+            word-break: break-word;
+            width: 100%;
+            padding: 1rem;
+            margin: 0;
+            border-radius: 2rem;
+            border: 1px solid #d9b99b;
+            background-color: #fff0db;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="message">
+        <img src="cid:class-played" alt="{{ class }}">
+        <div>
+            <p class="name"><span>{{ name }}</span> said :</p>
+            <p class="message">{{ message }}</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
